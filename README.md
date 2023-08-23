@@ -1,0 +1,1 @@
+Our course project is about College events with "timely updates"
