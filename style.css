@@ -1,0 +1,47 @@
+.navbar-list{
+    list-style: none;
+    display:flex;
+    gap:20px;
+}
+.navbar-list-item{
+    cursor: pointer;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.navbar{
+    display:flex;
+}
+
+body{
+    background-color: black;
+}
+
+.navbar-list-item a {
+    color: #D7D7D7;
+    text-decoration: none;
+}
+.gif{
+    display:flex;
+    justify-content: center;
+}
+.gif img{
+    
+    border-radius:50px
+}
+.intro-text {
+    display: flex;
+    font-family: 'Share', cursive ;
+    color: #C28E0C;
+    justify-content: center;
+    margin-top:20px;
+    font-size:22px;
+    max-width: 60%;
+    margin : 40px auto;
+    text-align: justify;
+}
+
