@@ -10,6 +10,16 @@
     </style>
   </head>
   <body>
+
+  <div class="overlay" id="overlay"></div>
+
+    <div class="modal" id="modal">
+      <h2>Subscribe for Event Updates</h2>
+      <p>Enter your email to receive event updates:</p>
+      <input type="email" id="email" placeholder="Enter your email" pattern=".+@globex\.com" required>
+      <button onclick="closeModal()">Subscribe</button>
+    </div>
+
     <header class="header">
       <div>
         <img
@@ -38,5 +48,31 @@
         events page which lists all the events.
       </div>
     </main>
+    
+    <script>
+
+      const modal = document.getElementById('modal');
+      const overlay = document.getElementById('overlay');
+
+      function openModal() {
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+      }
+
+      function closeModal() {
+        const userEmail = document.getElementById('email').value;
+        console.log(userEmail)
+
+        // Email Validation is required
+
+        if (userEmail != ""){
+          modal.style.display = 'none';
+          overlay.style.display = 'none';
+
+        }
+      }
+
+      window.onload = openModal;
+    </script>
   </body>
 </html>
