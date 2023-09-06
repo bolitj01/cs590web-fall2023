@@ -1,0 +1,39 @@
+#profile{
+    font-size: 36pt;
+    width: 65vw;
+    height: 70vh;   
+    /* box-shadow: 5% black; */
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    float:right;
+    position: sticky;
+    top: 5vh;
+    left: 5vw;
+    z-index: -1;
+}
+
+summary{
+    background: rgb(63,94,251);
+    background: linear-gradient(174deg, rgba(63,94,251,1) 0%, rgba(87,101,138,0.3169642857142857) 49%);}
+
+input{
+    font-size: 20pt;
+}
+
+form{
+    margin: 5% 0%;
+}
+
+inputli{
+    font-size: 20pt;
+    color: gray;
+    margin: 5%;
+    box-shadow: 10px black;
+}
+
+label{
+    color:gold
+}
