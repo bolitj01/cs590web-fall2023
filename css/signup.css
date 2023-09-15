@@ -1,0 +1,44 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#logo{
+
+    width: 150px;
+    height: 150px;
+ 
+    display: inline-block;
+}
+.header{
+    background-color: hsl(39, 100%, 88%);
+    display: block;
+    justify-content: space-between;
+  height: 100px;
+}
+header > nav{
+    display: inline-block;
+    
+    width: 90%;
+    text-align: right;
+    position: relative;
+    bottom: 100px;
+    padding: 10px;
+    font-style: italic;
+}
+.header .navbar a{
+    font-size: 20px;
+    color:rgb(0, 57, 7);
+    text-decoration: none;
+    margin: 10px;
+}
+
+.header .navbar a:hover{
+    color:rgb(110, 144, 0);
+}
+*{
+    font-family: 'Exo', sans-serif;
+
+}
+footer{
+    text-align: center; padding: 10px; background-color: #f7f7f7; position: fixed; bottom: 0; width: 100%;"
+}
