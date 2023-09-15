@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link href="css/signup.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/mainlogo.png" />
 </head>
 <body>
     
@@ -24,41 +25,36 @@
 
 
 
-    <div>
-        <h1>Sign Up</h1>
-        <form>
-        <section>
-          <label>Email</label>
-          <input type="email" name="email" required>
-        </section>
-
-          <label>Password</label>
-          <input type="password" name="password" required>
-          
-          <label>Re-enter Password</label>
-          <input type="password" name="reenterpassword" required>
-
-        <div>  
-          <label>Date of Birth</label>
-          <input type="date" id="dob" name="dob" required>
+    <section class="centered-section">
+        <div class="headSignUp">
+          <h1>Sign Up</h1>
         </div>
+        <div class="erMsg">
+          <h4>Error Message</h4>
+        </div>
+        <div class="formSection">
+        <form>
+            <div>
+              <input type="text" class="inTxCmn iB" placeholder="First Name">
+              <input type="text" class="inTxCmn iB" placeholder="Last Name">
+            </div>
 
-        <section>
-          <label>Gender</label>
-          <div>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label>
-          </div>
-        </section>
-        
-        
-          <button type="submit">Sign Up</button>
+            <div>
+              <input type="password" class="inTxCmn iB" placeholder="Password">
+              <input type="password" class="inTxCmn iB" placeholder="Re Enter Password">
+            </div>
+
+            <div>
+              <input type="email" class="email inTxCmn iB" placeholder="Email">
+              
+            </div>
+            <div>
+              <input type="submit" value="Sign Up" class="subBtn" placeholder="Email">
+              
+            </div>
         </form>
-      </div>
+        </div>
+      </section>
 
       <footer>
         &copy; 2023 PFW. All Rights Reserved.

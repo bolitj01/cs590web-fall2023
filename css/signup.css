@@ -1,6 +1,8 @@
 body{
     padding: 0;
     margin: 0;
+    
+
 }
 #logo{
 
@@ -40,5 +42,65 @@ header > nav{
 
 }
 footer{
-    text-align: center; padding: 10px; background-color: #f7f7f7; position: fixed; bottom: 0; width: 100%;"
+    text-align: center; padding: 10px; background-color: #f7f7f7; position: fixed; bottom: 0; width: 100%;
+}
+
+  .centered-section {
+    border: 1px solid grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    background-color: white;
+}
+
+  .headSignUp{
+    color: white;
+    background-color: black;
+    position: relative;
+    bottom: 18px;
+    padding: 10px;
+}
+.erMsg{
+    text-align: center;
+    border: 1px solid red;
+    background: red;
+    color: white;
+    padding: -2px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    border-radius: 8px;
+}
+
+.inTxCmn{
+    padding: 10px;
+    margin: 10px;
+    width: 43%;
+}
+.inB{
+    display: inline-block;
+}
+.email{
+    width: 650px;
+    margin-left: 5px;
+    position: relative;
+    left: 6px;
+    
+}
+.formSection{
+    display: block;
+    width: 700px;
+
+}
+.subBtn{
+    margin: 0 auto;
+    display: block;
+    padding: 15px;
+    border-radius: 15px;
+    width: 200px;
+    margin-bottom: 30px;
+    border: 0.5px solid grey;
 }
