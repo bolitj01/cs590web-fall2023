@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <a href="#">Home</a>&nbsp;&nbsp;
+            <a href="#">Events</a>&nbsp;&nbsp;
+            <a href="#">Profile/Signup</a>
+          </ul>
+      </nav>
+    <div>
+        <h1>Sign Up</h1>
+        <form>
+        <section>
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </section>
+
+          <label>Password</label>
+          <input type="password" name="password" required>
+          
+          <label>Re-enter Password</label>
+          <input type="password" name="reenterpassword" required>
+
+        <div>  
+          <label>Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <section>
+          <label>Gender</label>
+          <div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+          </div>
+        </section>
+        
+        
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <footer style="text-align: center; padding: 10px; background-color: #f7f7f7; position: fixed; bottom: 0; width: 100%;">
+        &copy; 2023 PFW. All Rights Reserved.
+      </footer>
+</body>
+
+</html>
