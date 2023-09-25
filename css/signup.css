@@ -108,3 +108,22 @@ footer{
     font-weight: bold;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+   .centered-section{
+    width: 80%;  
+   }
+   .inTxCmn{
+    width: 18%;
+   }
+   .email{
+    width:43%;
+   }
+   .subBtn{
+    margin: 3% 10%;
+   }
+   .erMsg{
+    width: 70%;
+    font-size: 0.9em;
+   }
+}
+  
