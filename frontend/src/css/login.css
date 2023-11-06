@@ -126,4 +126,9 @@ footer{
     font-size: 0.9em;
    }
 }
-  
+  .hide{
+    display: none;
+  }
+  .show{
+    display: block;
+  }
