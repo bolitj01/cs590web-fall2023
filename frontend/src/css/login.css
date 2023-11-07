@@ -129,9 +129,24 @@ footer{
     font-size: 0.9em;
    }
 }
+
+.emailLg{
+    width: 90%;
+    display: block;
+    margin-inline: auto;
+
+
+}
 @media (max-width: 420px) {
-
-
+    .emailLg{
+        width: 80%;
+    }
+    .inTxCmn{
+        width: 80%;
+        margin-inline: auto;
+        display: block;
+        font-size: 1em;
+    }
     .header{
         width: 100%;
     }
@@ -145,12 +160,14 @@ footer{
     display: block;
     font-size: 1em;
 }
+
 .formSection{
     width: 100%;
 }
 
 .centered-section{
     width: 95%;  
+    margin-top: 2em;
    }
 
    .subBtn{
@@ -167,10 +184,13 @@ footer{
 }
 
 
-
   .hide{
     display: none;
   }
   .show{
     display: block;
+  }
+  .sucessMsg{
+    background-color: green;
+    border-color: green;
   }
