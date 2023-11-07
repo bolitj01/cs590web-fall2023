@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
     const username= "mongodb"
     const pwd = "wtuPGgT5m7JfWLpM"
-    const connectionString = "mongodb+srv://"+username+":"+pwd+"@cluster0.vhix8xx.mongodb.net/?retryWrites=true&w=majority"
+    const connectionString = "mongodb+srv://"+username+":"+pwd+"@cluster0.vhix8xx.mongodb.net/pfwopensource?retryWrites=true&w=majority"
   try {
     const conn = await mongoose.connect(connectionString, {
       useNewUrlParser: true,
