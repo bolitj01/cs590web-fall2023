@@ -1,6 +1,6 @@
 const User = require('../models/userModel');
 
-const getAllUsers = (req, res) => {
+const getAllUsers = async (req, res) => {
     User.find().then((data)=>{
         res.json(data)
     }).catch((err)=>{
@@ -9,7 +9,7 @@ const getAllUsers = (req, res) => {
   };
 
  
-const getUserById = (req, res) => {
+const getUserById = async (req, res) => {
     User.findById(req.params.id).then((data)=>{
         res.json(data)
     }).catch((err)=>{
@@ -17,7 +17,7 @@ const getUserById = (req, res) => {
     })
   };
 
-  const updateUser = (req, res) => {
+  const updateUser =  async (req, res) => {
     const id = req.params.id;
     const data = req.body;
 
@@ -29,17 +29,29 @@ const getUserById = (req, res) => {
   };
 
 
-const createUser = (req, res) => {
+const createUser = async (req, res) => {
     const newUser = new User(req.body);
-    newUser.save().then((data)=>{
-        res.json(data)
+
+   await User.findOne({email:req.body.email}).then((data)=>{
+        if(data){
+        res.json({msg:2,erMsg:"Email already exist"})
+        }else{
+            const newUser = new User(req.body);
+            newUser.save().then((data)=>{
+                res.json({msg:1,erMsg:"User created"})
+            }).catch((err)=>{
+                res.status(500).json({ error: err.message })
+            })
+        }
     }).catch((err)=>{
         res.status(500).json({ error: err.message })
     })
+
+    
   };
 
 
-const deleteUserById = (req, res) => {
+const deleteUserById = async (req, res) => {
     const id = req.params.id;
     User.deleteOne({ _id: id }).then((data)=>{
         res.json(data)
@@ -49,7 +61,7 @@ const deleteUserById = (req, res) => {
   };
 
 
-const isUser = (req, res) => {
+const isUser = async (req, res) => {
     const data = req.body
 
     User.findOne({email:data.email,password:data.password}).then((data)=>{

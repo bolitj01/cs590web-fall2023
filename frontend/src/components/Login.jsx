@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../css/login.css"
 
-import { getAllUsers,getuserById,loginApi} from '../api/userApi';
+import {loginApi} from '../api/userApi';
 function Login() {
 
 const [username,setUsername] = useState("");

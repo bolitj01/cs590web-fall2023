@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "../css/login.css"
+import { signupapi } from "../api/userApi";
 
 function Signup(){
 
@@ -14,6 +15,7 @@ function Signup(){
 
     const [ercondition,setErcondition] = useState(false);
     const [erMsg,setErmsg] = useState("");
+    const [successcondition,setSuccesscondition] = useState(false);
     const handlechange = (e) =>{
         const {name,value} = e.target;
         setFormdata({
@@ -22,17 +24,12 @@ function Signup(){
         })
     }
 
-    const handlesubmit = (e) =>{
+    const handlesubmit = async(e) =>{
         e.preventDefault();
         for(const [key,value] of  Object.entries(formdata)){
             if(key == "pfwid"){
                 if(value.length ==0){
                     setErmsg("Please enter PFW ID");
-                    setErcondition(true);
-                    return;
-                }
-                if(typeof value !== 'number'){
-                    setErmsg("PFW ID should be a number");
                     setErcondition(true);
                     return;
                 }
@@ -58,7 +55,21 @@ function Signup(){
         } 
         setErmsg("");
         setErcondition(false);
-        alert("lets sign up")
+    
+       const res = await signupapi(formdata);
+  
+       if(res.msg === 2)
+       {
+        setErmsg(res.erMsg);
+        setErcondition(true);
+        setSuccesscondition(false);
+        return;
+       }
+       setErmsg("");
+       setErcondition(false);
+       setErmsg(res.erMsg);
+       setSuccesscondition(true);
+
     }
 
     return <>
@@ -75,7 +86,7 @@ function Signup(){
         <div className="headSignUp">
           <h1>Sign Up</h1>
         </div>
-        <div className={`erMsg ${ercondition ? 'show' : 'hide'}`} >
+        <div className={`erMsg ${ercondition ? 'show' : 'hide'}  ${successcondition ? 'show sucessMsg':''}   ` } >
           <h4>{erMsg}</h4>
         </div>
         <div className="formSection">

@@ -190,3 +190,7 @@ footer{
   .show{
     display: block;
   }
+  .sucessMsg{
+    background-color: green;
+    border-color: green;
+  }
