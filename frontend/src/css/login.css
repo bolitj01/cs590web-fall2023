@@ -129,6 +129,45 @@ footer{
     font-size: 0.9em;
    }
 }
+@media (max-width: 420px) {
+
+
+    .header{
+        width: 100%;
+    }
+    .header .navbar a{
+        font-size: 1.2em;
+    }
+
+.email{
+    width: 80%;
+    margin-inline: auto;
+    display: block;
+    font-size: 1em;
+}
+.formSection{
+    width: 100%;
+}
+
+.centered-section{
+    width: 95%;  
+   }
+
+   .subBtn{
+    margin-inline: auto;
+    display: block;
+    font-size: 1em;
+   }
+   .erMsg{
+    font-size: 1em;
+   }
+   body{
+    overflow-y: hidden; 
+   }
+}
+
+
+
   .hide{
     display: none;
   }

@@ -1,5 +1,7 @@
 import { useState } from "react"
 import "../css/login.css"
+
+import { getAllUsers,getuserById } from '../api/userApi';
 function Login() {
 
 const [username,setUsername] = useState("");
@@ -8,7 +10,7 @@ const [password,setPassword] = useState("");
 const [ermsg,setErmsg] = useState("");
 const [ercond,setErcond] = useState(false);
 
-    const login = (e) =>{
+    const login = async (e) =>{
         e.preventDefault();
         if(username.length == 0){
             setErmsg("Please enter the Email");
@@ -22,8 +24,8 @@ const [ercond,setErcond] = useState(false);
             return;
         }
         setErcond(false);
-        setErmsg("");
-        alert("lets login");
+        const users = await getuserById("6549e7d4bd7c4d8c53b77ba7");
+        console.log(users)
     }
 
     return <>
