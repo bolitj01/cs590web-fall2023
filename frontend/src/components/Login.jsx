@@ -2,6 +2,7 @@ import { useState } from "react"
 import "../css/login.css"
 
 import {loginApi} from '../api/userApi';
+import { Link } from "react-router-dom";
 function Login() {
 
 const [username,setUsername] = useState("");
@@ -44,7 +45,7 @@ const [ercond,setErcond] = useState(false);
     <img id="logo" src="mainlogo.png" />
     <nav className="navbar">
         <a href="homepage.html">Home</a>
-        <a href="SignUp.html">Sign Up</a>
+        <Link to="/signup"><a>Sign Up</a></Link>
 
     </nav>
 

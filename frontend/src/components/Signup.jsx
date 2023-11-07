@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "../css/login.css"
 import { signupapi } from "../api/userApi";
+import { Link } from "react-router-dom";
 
 function Signup(){
 
@@ -31,18 +32,21 @@ function Signup(){
                 if(value.length ==0){
                     setErmsg("Please enter PFW ID");
                     setErcondition(true);
+                    setSuccesscondition(false);
                     return;
                 }
             }
             if(key=="repassword" && value.length ==0 ){
                 setErmsg("Please re-enter password");
                 setErcondition(true);
+                setSuccesscondition(false);
                 return;
             }
             
             if(value.length ==0 ){
                 setErmsg("Please enter "+key.toUpperCase()+"");
                 setErcondition(true);
+                setSuccesscondition(false);
                 return;
             }
            
@@ -51,10 +55,13 @@ function Signup(){
         if(formdata.repassword != formdata.password){
             setErmsg("Passwords do not match");
             setErcondition(true);
+            setSuccesscondition(false);
+            
             return;
         } 
         setErmsg("");
         setErcondition(false);
+        setSuccesscondition(false);
     
        const res = await signupapi(formdata);
   
@@ -62,7 +69,7 @@ function Signup(){
        {
         setErmsg(res.erMsg);
         setErcondition(true);
-        setSuccesscondition(false);
+        
         return;
        }
        setErmsg("");
@@ -77,7 +84,7 @@ function Signup(){
          <img id="logo" src="mainlogo.png" />
             <nav className="navbar">
                  <a href="homepage.html">Home</a>
-                <a href="login.html">Login</a>
+                 <Link to="/login"> <a>Login</a></Link>
 
             </nav>
 
