@@ -8,11 +8,31 @@ const getAllUsers = (req, res) => {
     })
   };
 
+ 
+const getUserById = (req, res) => {
+    User.findById(req.params.id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>{
+        res.status(500).json({ error: err.message })
+    })
+  };
+
+  const updateUser = (req, res) => {
+    const id = req.params.id;
+    const data = req.body;
+
+    User.updateOne({ _id: id }, { $set: data }).then((data)=>{
+        res.json(data)
+    }).catch((err)=>{
+        res.status(500).json({ error: err.message })
+    })
+  };
+
 
 const createUser = (req, res) => {
     const newUser = new User(req.body);
     newUser.save().then((data)=>{
-        res.json({"msg":"user created"})
+        res.json(data)
     }).catch((err)=>{
         res.status(500).json({ error: err.message })
     })
@@ -20,5 +40,7 @@ const createUser = (req, res) => {
 
 module.exports = {
     getAllUsers,
-    createUser
+    createUser,
+    getUserById,
+    updateUser
 }
