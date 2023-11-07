@@ -63,6 +63,9 @@ footer{
     bottom: 18px;
     padding: 10px;
 }
+.headSignUp h1{
+    margin-left: 0.5em;
+}
 .erMsg{
     text-align: center;
     border: 1px solid red;
