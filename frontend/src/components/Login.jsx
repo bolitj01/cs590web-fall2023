@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../css/login.css"
 
-import { getAllUsers,getuserById } from '../api/userApi';
+import { getAllUsers,getuserById,loginApi} from '../api/userApi';
 function Login() {
 
 const [username,setUsername] = useState("");
@@ -24,8 +24,15 @@ const [ercond,setErcond] = useState(false);
             return;
         }
         setErcond(false);
-        const users = await getuserById("6549e7d4bd7c4d8c53b77ba7");
-        console.log(users)
+        const res = await loginApi(username,password);
+       
+        if(res === null){
+          setErmsg("Invalid credentials! please check Email/Password");
+          setErcond(true)
+          return;
+        }
+        setErcond(false);
+        alert("login works")
     }
 
     return <>
@@ -52,7 +59,7 @@ const [ercond,setErcond] = useState(false);
           <h4>{ermsg}</h4>
         </div>
         <div className="formSection">
-        <form>
+        <form onSubmit={login}>
           
           
             <div>
@@ -67,7 +74,7 @@ const [ercond,setErcond] = useState(false);
               
             
             <div>
-              <input type="submit" value="Login" className="subBtn" placeholder="Email" onClick={login}/>
+              <input type="submit" value="Login" className="subBtn" placeholder="Email" />
         
             </div>
         </form>

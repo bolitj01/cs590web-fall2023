@@ -38,9 +38,33 @@ const createUser = (req, res) => {
     })
   };
 
+
+const deleteUserById = (req, res) => {
+    const id = req.params.id;
+    User.deleteOne({ _id: id }).then((data)=>{
+        res.json(data)
+    }).catch((err)=>{
+        res.status(500).json({ error: err.message })
+    })
+  };
+
+
+const isUser = (req, res) => {
+    const data = req.body
+
+    User.findOne({email:data.email,password:data.password}).then((data)=>{
+        res.json(data)
+    }).catch((err)=>{
+        res.status(500).json({ error: err.message })
+    })
+
+  };
+
 module.exports = {
     getAllUsers,
     createUser,
     getUserById,
-    updateUser
+    updateUser,
+    deleteUserById,
+    isUser
 }
