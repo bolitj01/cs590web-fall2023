@@ -125,3 +125,7 @@ body{
         display: none;
     }
 }
+#logospan{
+    text-decoration: NONE;
+    font-size: 2EM;
+}

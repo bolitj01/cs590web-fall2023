@@ -91,13 +91,14 @@ function Signup(){
     </header>
     <section className="centered-section">
         <div className="headSignUp">
-          <h1>Sign Up</h1>
+          <h2>Sign Up</h2>
         </div>
         <div className={`erMsg ${ercondition ? 'show' : 'hide'}  ${successcondition ? 'show sucessMsg':''}   ` } >
-          <h4>{erMsg}</h4>
+          <h6>{erMsg}</h6>
         </div>
         <div className="formSection">
         <form onSubmit={handlesubmit}>
+           <div className="intxtopfield">
             <div>
               <input name="firstname" onChange={handlechange} value={formdata.firstname} type="text" className="inTxCmn iB" placeholder="First Name" />
               <input type="text" className="inTxCmn iB" placeholder="Last Name" name="lastname" onChange={handlechange} value={formdata.lastname} />
@@ -107,7 +108,7 @@ function Signup(){
               <input type="password" className="inTxCmn iB" placeholder="Password" name="password" onChange={handlechange} value={formdata.password} />
               <input type="password" className="inTxCmn iB" placeholder="Re Enter Password" name="repassword" onChange={handlechange} value={formdata.repassword} />
             </div>
-
+            </div>
             <div>
               <input type="email" className="inTxCmn iB emailLg" placeholder="Email" name="email" onChange={handlechange} value={formdata.email} />
               <input type="text" className="inTxCmn iB emailLg" placeholder="Pfw ID" name="pfwid" onChange={handlechange} value={formdata.pfwid} />
