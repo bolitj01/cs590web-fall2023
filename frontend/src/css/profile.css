@@ -1,0 +1,132 @@
+:root{
+    
+    --btn-pink:#ff5959;
+    --btn-yellow:#facf5a;
+    --btn-blue:#49beb7;
+    --btn-dblue:#085f63;
+    --grey:#f8f8f8;
+    --grey--dark:#858585a9;
+
+}
+#logo{
+    width: 100px;
+    height: 100px;
+}
+.logoouter{
+    background-color: hsl(39, 100%, 88%);
+}
+.logout{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--btn-pink);
+}
+.logout:hover,.logout:active{
+    color: white;
+    background-color: var(--btn-pink);
+}
+.navigation{
+    background-color: var(--grey--dark);
+    height: 100vh;
+    padding: 0;
+}
+.filtertext{
+    background-color: var(--grey);
+    padding: 5%
+}
+.tags{
+    margin: 0;
+}
+.tags ul{
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
+}
+.tags li{
+    display: inline-block;
+    padding: 2%;
+    border: 1px solid grey;
+    margin-inline: 5px;
+    border-radius: 10px;
+    background-color: var(--btn-dblue);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+#posttextarea{
+    margin: 10px 0;
+    resize: none;
+}
+.postbtn{
+    float: right;
+    background-color: var(--btn-pink);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.postbtn:hover,.postbtn:active{
+    color: white;
+    background-color: var(--btn-pink);
+}
+.postouter{
+    border: 1px solid grey;
+    margin: 10px;
+    background-color: var(--grey);
+    margin-left: 0;
+    border-radius: 10px;
+}
+.avatarnav{
+        border: 1px solid grey;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+.dropset{
+    position: absolute;
+    top:11%;
+    background-color: var(--grey);
+    color: black;
+    right: 2%;
+    width: 10%;
+}
+.dropset ul{
+    padding: 0;
+}
+.dropset li{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.dropset li:hover{
+    background-color: var(--grey--dark);
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.avatarpost{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+.pname{
+    display: inline-block;
+    margin-left: 10px;
+}
+.pdate{
+    display:inline-block;
+    float: right;
+}
+.plike,.pcomment{
+    cursor: pointer;
+}
+.post{
+    margin: 20px 20px;
+}
