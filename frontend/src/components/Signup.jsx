@@ -83,7 +83,7 @@ function Signup(){
      <header className="header">
          <img id="logo" src="mainlogo.png" />
             <nav className="navbar">
-                 <a href="homepage.html">Home</a>
+            <a href="/"> <span>Home</span></a>
                  <Link to="/login"> <span>Login</span></Link>
 
             </nav>

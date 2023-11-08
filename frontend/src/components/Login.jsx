@@ -44,7 +44,7 @@ const [ercond,setErcond] = useState(false);
   <header className="header">
     <img id="logo" src="mainlogo.png" />
     <nav className="navbar">
-        <a href="homepage.html">Home</a>
+    <a href="/"> <span>Home</span></a>
         <Link to="/signup"><span>Sign Up</span></Link>
 
     </nav>
