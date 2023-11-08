@@ -12,6 +12,9 @@ function App() {
   const Login = lazy(() => import('./components/Login'));
   const Signup = lazy(() => import('./components/Signup'));
   const Home = lazy(() => import('./pages/Home'));
+  const profile =  lazy(() => import('./pages/Profile'));
+  const posts =  lazy(() => import('./pages/Posts'));
+  
   return (
     
     <Router>
@@ -22,6 +25,8 @@ function App() {
  
       <Route path="/login" Component={Login} />
       <Route path="/signup" Component={Signup} />
+      <Route path="/posts" Component={posts} />
+      <Route path="/profile" Component={profile} />
       <Route path="/" Component={Home} />
 
       </Routes>
