@@ -43,9 +43,9 @@ const [ercond,setErcond] = useState(false);
     
   <header className="header">
     <img id="logo" src="mainlogo.png" />
-    <nav className="navbar">
-        <a href="homepage.html">Home</a>
-        <Link to="/signup"><span>Sign Up</span></Link>
+        <nav className="d-flex align-items-center">
+           <a href="/">Home</a>
+            <Link to="/signup"><span>Sign Up</span></Link>
 
     </nav>
 
@@ -54,10 +54,10 @@ const [ercond,setErcond] = useState(false);
 
     <section className="centered-section">
         <div className="headSignUp">
-          <h1>Login</h1>
+          <h2>Login</h2>
         </div>
         <div className={`erMsg ${ercond ? 'show' : 'hide'}`}>
-          <h4>{ermsg}</h4>
+          <h6>{ermsg}</h6>
         </div>
         <div className="formSection">
         <form onSubmit={login}>

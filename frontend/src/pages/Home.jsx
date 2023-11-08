@@ -8,7 +8,7 @@ function Home() {
     <img id="logo" src="mainlogo.png" />
     <header className="header">
       
-      <a href="#" className="logo"><span id="logospan">Welcome Mastadons</span></a>
+    <span id="logospan">Welcome Mastadons</span>
  
       
  

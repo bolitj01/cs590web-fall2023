@@ -18,20 +18,19 @@ body{
   height: 100px;
 }
 header > nav{
+    float: right;
     display: inline-block;
-    
-    width: 90%;
     text-align: right;
-    position: relative;
-    bottom: 100px;
     padding: 10px;
-    font-style: italic;
+    font-style: italic;;
+
 }
-.header .navbar a{
+.header a{
     font-size: 20px;
     color:rgb(0, 57, 7);
     text-decoration: none;
-    margin: 10px;
+    margin: 10px;margin-top: 20%;
+    margin-right: 30px;
 }
 
 .header .navbar a:hover{
@@ -81,7 +80,7 @@ footer{
 .inTxCmn{
     padding: 10px;
     margin: 10px;
-    width: 43%;
+    width: 46%;
 }
 .inB{
     display: inline-block;
@@ -181,6 +180,15 @@ footer{
    body{
     overflow-y: hidden; 
    }
+}
+
+
+.intxtopfield{
+
+    width: 93%;
+    justify-content: center;
+    display: block;
+    margin-inline: auto;
 }
 
 
