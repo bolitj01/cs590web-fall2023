@@ -50,8 +50,6 @@ function Profile() {
                     <li>#Athletics</li>
                   </ul>
 
-
-
                 </div>
             </div>
 
@@ -115,7 +113,17 @@ function Profile() {
 
           </div>
 
-          <div className='col-sm-2'>trending</div>
+          <div className='col-sm-2'>
+            <div className='trendingouter'>
+            <h3 className='trendingtxt'>Trending</h3>
+            <div className='trendinginner'>
+              <ul>
+                  <li>#Atheletics (20)</li>
+                  <li>#ISS (10)</li>
+              </ul>
+            </div>
+            </div>
+          </div>
 
         </div>
 

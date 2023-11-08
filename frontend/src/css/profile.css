@@ -114,7 +114,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-
+    border: 1px solid grey;
 }
 .pname{
     display: inline-block;
@@ -129,4 +129,14 @@
 }
 .post{
     margin: 20px 20px;
+}
+.trendingouter{
+    background-color: #ff1f5a;
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+.trendinginner li{
+    font-weight: 500;
 }
