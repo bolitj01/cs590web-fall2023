@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../css/profile.css"
 function Profile() {
   document.title = "Profile";
+
+    const [togglemenu,setTogglemenu] = useState(false)
+    const handletoggle = (e)=>{
+      if(togglemenu == false){
+        setTogglemenu(true)
+      }else{
+        setTogglemenu(false)
+      }
+    }
 
   return (
     <>
@@ -11,8 +20,8 @@ function Profile() {
             <img id="logo" src="mainlogo.png" />
             </div>
             <div className='col container d-flex align-items-center'>
-            <img className="avatarnav" src="avatar/avatar1.jpg" />
-                 <div className='dropset hide'>
+            <img className="avatarnav" src="avatar/avatar1.jpg" onClick={handletoggle} />
+                 <div className={`dropset ${(togglemenu) ? 'show':'hide'} `}>
                       <ul>
                         <li>Profile</li>
                         <li>My Posts</li>
@@ -31,7 +40,7 @@ function Profile() {
 
             <h1 className='filtertext'>Topics</h1>
             
-            <select class="form-control" id="fruit" name="fruit">
+            <select className="form-control" id="fruit" name="fruit">
             <option value="apple">Apple</option>
             <option value="banana">Banana</option>
             <option value="cherry">Cherry</option>
@@ -62,7 +71,7 @@ function Profile() {
               <div className='col'>
                 <div className='row'>
                 <div className='col'>
-                <textarea class="form-control" maxLength={250} placeholder='Post Something!' id="posttextarea" rows="4"></textarea>
+                <textarea className="form-control" maxLength={250} placeholder='Post Something!' id="posttextarea" rows="4"></textarea>
                 </div>
                 </div>
                 <div className='row'>
@@ -77,24 +86,24 @@ function Profile() {
             <div className='row'>
 
             <div className='col'>
-                  <div class="card post">
-                    <div class="card-header">
+                  <div className="card post">
+                    <div className="card-header">
                       <div className='row'>
                         <div className='col'>
                         <img className="avatarpost" src="avatar/avatar1.jpg" />
                         <h5 className='pname'>Hrihtik Mnai</h5>
-                        <h7 className='pdate text-muted'>2 days ago</h7>
+                        <h6 className='pdate text-muted'>2 days ago</h6>
                         </div>
                        
                       </div>
                     </div>
-                        <div class="card-body">
+                        <div className="card-body">
                       
-                          <p class="card-text">How are you?</p>
+                          <p className="card-text">How are you?</p>
                         
                         </div>
 
-                    <div class="card-footer container-fluid">
+                    <div className="card-footer container-fluid">
                         <div className='row'>
 
                             <div className='col plike'>Like (20)</div>
