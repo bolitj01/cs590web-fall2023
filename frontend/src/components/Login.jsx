@@ -1,5 +1,8 @@
 import { useState } from "react"
 import "../css/login.css"
+
+import {loginApi} from '../api/userApi';
+import { Link } from "react-router-dom";
 function Login() {
 
 const [username,setUsername] = useState("");
@@ -8,7 +11,7 @@ const [password,setPassword] = useState("");
 const [ermsg,setErmsg] = useState("");
 const [ercond,setErcond] = useState(false);
 
-    const login = (e) =>{
+    const login = async (e) =>{
         e.preventDefault();
         if(username.length == 0){
             setErmsg("Please enter the Email");
@@ -22,8 +25,15 @@ const [ercond,setErcond] = useState(false);
             return;
         }
         setErcond(false);
-        setErmsg("");
-        alert("lets login");
+        const res = await loginApi(username,password);
+       
+        if(res === null){
+          setErmsg("Invalid credentials! please check Email/Password");
+          setErcond(true)
+          return;
+        }
+        setErcond(false);
+        alert("login works")
     }
 
     return <>
@@ -33,9 +43,9 @@ const [ercond,setErcond] = useState(false);
     
   <header className="header">
     <img id="logo" src="mainlogo.png" />
-    <nav className="navbar">
-        <a href="homepage.html">Home</a>
-        <a href="SignUp.html">Sign Up</a>
+        <nav className="d-flex align-items-center">
+           <a href="/">Home</a>
+            <Link to="/signup"><span>Sign Up</span></Link>
 
     </nav>
 
@@ -44,13 +54,13 @@ const [ercond,setErcond] = useState(false);
 
     <section className="centered-section">
         <div className="headSignUp">
-          <h1>Login</h1>
+          <h2>Login</h2>
         </div>
         <div className={`erMsg ${ercond ? 'show' : 'hide'}`}>
-          <h4>{ermsg}</h4>
+          <h6>{ermsg}</h6>
         </div>
         <div className="formSection">
-        <form>
+        <form onSubmit={login}>
           
           
             <div>
@@ -65,7 +75,7 @@ const [ercond,setErcond] = useState(false);
               
             
             <div>
-              <input type="submit" value="Login" className="subBtn" placeholder="Email" onClick={login}/>
+              <input type="submit" value="Login" className="subBtn" placeholder="Email" />
         
             </div>
         </form>
