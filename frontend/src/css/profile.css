@@ -86,7 +86,7 @@
 }
 .dropset{
     position: absolute;
-    top:11%;
+    top:7%;
     background-color: var(--grey);
     color: black;
     right: 2%;
@@ -139,4 +139,12 @@
 }
 .trendinginner li{
     font-weight: 500;
+}
+.barsToggle{
+    cursor: pointer;
+    display: block;
+    font-size: 2em;
+}
+.dropIcon{
+    margin-right:10px;
 }

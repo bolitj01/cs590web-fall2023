@@ -20,13 +20,13 @@ function Profile() {
             <img id="logo" src="mainlogo.png" />
             </div>
             <div className='col container d-flex align-items-center'>
-            <img className="avatarnav" src="avatar/avatar1.jpg" onClick={handletoggle} />
+            <i class="fa-solid fa-bars barsToggle" onClick={handletoggle}></i>
                  <div className={`dropset ${(togglemenu) ? 'show':'hide'} `}>
                       <ul>
-                        <li>Profile</li>
-                        <li>My Posts</li>
-                        <li>Settings</li>
-                        <li>Logout</li>
+                        <li><i class="fa-solid fa-user dropIcon"></i>Profile</li>
+                        <li><i class="fa-solid fa-bookmark dropIcon"></i>My Posts</li>
+                        <li><i class="fa-sharp fa-solid fa-gear dropIcon"></i>Settings</li>
+                        <li><i class="fa-solid fa-circle-xmark dropIcon"></i>Logout</li>
                       </ul>
                 </div>
             </div>
@@ -106,8 +106,8 @@ function Profile() {
                     <div className="card-footer container-fluid">
                         <div className='row'>
 
-                            <div className='col plike'>Like (20)</div>
-                            <div className='col pcomment'>Comment (2)</div>
+                            <div className='col plike'><i class="fa-regular fa-thumbs-up dropIcon"></i> (20)</div>
+                            <div className='col pcomment'><i class="fa-solid fa-comments dropIcon"></i> (2)</div>
 
                       </div>
                     </div>
@@ -124,7 +124,7 @@ function Profile() {
 
           <div className='col-sm-2'>
             <div className='trendingouter'>
-            <h3 className='trendingtxt'>Trending</h3>
+            <h3 className='trendingtxt'><i class="fa-solid fa-fire dropIcon"></i>Trending</h3>
             <div className='trendinginner'>
               <ul>
                   <li>#Atheletics (20)</li>
