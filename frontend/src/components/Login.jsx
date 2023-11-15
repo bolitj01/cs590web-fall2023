@@ -33,7 +33,9 @@ const [ercond,setErcond] = useState(false);
           return;
         }
         setErcond(false);
-        alert("login works")
+        localStorage.setItem("id",res._id);
+        localStorage.setItem("firstname",res.firstname);
+        window.location = "/profile"
     }
 
     return <>

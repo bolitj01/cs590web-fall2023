@@ -6,6 +6,10 @@ const userSchema= new mongoose.Schema({
     firstname: String,
     lastname: String,
     pfwid: Number,
+    createdAt: {
+        type: Date,
+        default: Date.now
+      }
 });
 
 const User = mongoose.model('User', userSchema);

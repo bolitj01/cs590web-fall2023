@@ -86,7 +86,7 @@
 }
 .dropset{
     position: absolute;
-    top:11%;
+    top:7%;
     background-color: var(--grey);
     color: black;
     right: 2%;
@@ -100,6 +100,7 @@
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    color: black;
 }
 .dropset li:hover{
     background-color: var(--grey--dark);
@@ -139,4 +140,22 @@
 }
 .trendinginner li{
     font-weight: 500;
+}
+.barsToggle{
+    cursor: pointer;
+    display: block;
+    font-size: 2em;
+}
+.dropIcon{
+    margin-right:10px;
+}
+a{
+    text-decoration: none;
+}
+.postouterul{
+    margin: 0;
+    padding: 0;
+}
+#tagList{
+    padding:10px
 }
