@@ -3,14 +3,24 @@ const Post = require('../models/postsModel');
 
 const User = require('../models/userModel');
 
-
+const mqtt = require('mqtt');
+const { createTopic } = require('./topicController');
+const client = mqtt.connect("mqtt://test.mosquitto.org");
+client.on("connect",()=>{
+    console.log("Connected to mqqt server");
+    client.subscribe("pfwcsfall2023/tags")
+});
 function identifyTags(text){
     const hashtagRegex = /\B#(\w*[a-zA-Z]+\w*)/g;
     const matches = text.match(hashtagRegex);
     return matches || [];
 }
 
+client.on('message', async(topic, message) => {
+    msg = JSON.parse(message)
+    createTopic(message);
 
+  });
 
  
 const addPost = async (req, res) => {
@@ -26,8 +36,12 @@ const addPost = async (req, res) => {
     newPost.post = req.body.post;
     newPost.user.push(user);
     newPost.tags = identifyTags(newPost.post)
+
+
+
     const a = await User.findById(req.body.user)
     await newPost.save().then((data)=>{
+        client.publish("pfwcsfall2023/tags",JSON.stringify({postid:data._id,tags:newPost.tags}))
         if(data){
             res.json({msg:1,post:data,firstname:a.firstname})
         }else{

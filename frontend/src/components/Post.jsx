@@ -16,6 +16,7 @@ function Post() {
             }]
             setPosts([res.post,...posts])
         }
+        setNewPost("");
        
   }
   const handletextarea = (e) =>{

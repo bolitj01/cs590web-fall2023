@@ -12,6 +12,8 @@ const postRoutes = require("./routes/postRoutes")
 
 connectDB();
 
+
+
 app.use(express.json());
 app.use(cors())
 
