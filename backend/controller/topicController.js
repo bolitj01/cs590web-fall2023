@@ -22,7 +22,12 @@ const createTopic = async(data)=>
        
     });
 }
-
+const getAllTopics = async(req,res)=>{
+    Topic.find({},{["topic"]:1,_id:0}).then(data=>{
+       res.json(data)
+    })
+}
 module.exports = {
-    createTopic
+    createTopic,
+    getAllTopics
 }

@@ -14,3 +14,9 @@ export const addpost = async(formdata) =>{
     const data = await response.json();
     return data;
 }
+
+export const getpost = async(id) =>{
+    const response = await fetch(baseUrl+"/"+id);
+    const data = await response.json();
+    return data;   
+}

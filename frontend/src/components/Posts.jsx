@@ -13,16 +13,14 @@ const Posts = () => {
             const res = await getAllPosts();
 
             setPosts(res.posts)
-            
+    
         };
     
         fetchData();
       }, []); 
 
       
-    useEffect(() => {
-    
-      }, [posts]); 
+ 
 
   return (
     <>

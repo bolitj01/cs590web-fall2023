@@ -10,6 +10,8 @@ const userRoutes = require("./routes/userRoutes")
 
 const postRoutes = require("./routes/postRoutes")
 
+const topicRoutes = require("./routes/topicRoutes")
+
 connectDB();
 
 
@@ -21,7 +23,7 @@ app.use(cors())
 app.use('/users', userRoutes);
 app.use('/post', postRoutes);
 
-
+app.use("/topic",topicRoutes)
 const port = process.env.PORT || 3000;
 
 app.listen(port, ()=>{

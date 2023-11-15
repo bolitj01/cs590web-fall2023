@@ -29,7 +29,7 @@ function Post() {
     <div className='col'>
       <div className='row'>
       <div className='col'>
-      <textarea className="form-control" maxLength={250} onChange={handletextarea} placeholder='Post Something!' id="posttextarea" rows="4"></textarea>
+      <textarea className="form-control" value={newpost} maxLength={250} onChange={handletextarea} placeholder='Post Something!' id="posttextarea" rows="4"></textarea>
       </div>
       </div>
       <div className='row'>

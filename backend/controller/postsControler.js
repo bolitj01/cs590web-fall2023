@@ -6,21 +6,21 @@ const User = require('../models/userModel');
 const mqtt = require('mqtt');
 const { createTopic } = require('./topicController');
 const client = mqtt.connect("mqtt://test.mosquitto.org");
-client.on("connect",()=>{
-    console.log("Connected to mqqt server");
-    client.subscribe("pfwcsfall2023/tags")
-});
 function identifyTags(text){
     const hashtagRegex = /\B#(\w*[a-zA-Z]+\w*)/g;
     const matches = text.match(hashtagRegex);
     return matches || [];
 }
 
+client.on("connect",()=>{
+    console.log("Connected to mqqt server");
+    client.subscribe("pfwcsfall2023/tags")
+});
 client.on('message', async(topic, message) => {
     msg = JSON.parse(message)
     createTopic(message);
 
-  });
+});
 
  
 const addPost = async (req, res) => {
@@ -78,10 +78,17 @@ const getAllPosts = async (req, res) => {
 };
 
 
-
+const getPost = async(req,res)=>{
+    Post.findById(req.params.id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>{
+        res.status(500).json({ error: err.message })
+    })
+}
 
 
 module.exports = {
 addPost,
-getAllPosts
+getAllPosts,
+getPost
 }

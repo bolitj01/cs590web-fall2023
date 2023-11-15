@@ -27,6 +27,7 @@ function App() {
    
       <Route path="/profile" Component={profile} />
       <Route path="/" Component={Home} />
+      <Route path="/" Component={Home} />
 
       </Routes>
       </Suspense>

@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
+
+import { getAlltopics } from '../api/topicApi';
 function ToggleMenu() {
     
     const [togglemenu,setTogglemenu] = useState(false)
+    const [menu,setMenu]=useState([]);
     const handletoggle = (e)=>{
       if(togglemenu == false){
         setTogglemenu(true)
@@ -10,6 +13,13 @@ function ToggleMenu() {
         setTogglemenu(false)
       }
     }
+    useEffect(()=>{
+        const fetchdata = async()=>{
+            const s = await getAlltopics();
+            setMenu(s);
+        }
+        fetchdata();
+    }),[];
 
   return (
     <div className='col container d-flex align-items-center'>

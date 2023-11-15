@@ -5,6 +5,7 @@ import Trending from '../components/Trending';
 import Post from '../components/Post';
 import Posts from '../components/Posts';
 import { PostProvider } from '../contextapi/postsContext';
+import Topics from '../components/Topics';
 
 
 function Profile() {
@@ -27,34 +28,7 @@ function Profile() {
       <div className='row border'>
         
 
-          <div className='col-sm-2 navigation'>
-
-            <h1 className='filtertext'><i class="fa-solid fa-hashtag dropIcon"></i>Topics</h1>
-            
-            <select className="form-control" id="fruit" name="fruit">
-            <option value="apple">Apple</option>
-            <option value="banana">Banana</option>
-            <option value="cherry">Cherry</option>
-            <option value="date">Date</option>
-
-            <option value="apple">Apple</option>
-            <option value="banana">Banana</option>
-            <option value="cherry">Cherry</option>
-            <option value="date">Date</option>
-            </select>
-            
-            <div className='tags'>
-                <div className=''>
-                  <ul>
-                    <li>#ISS</li>
-                    <li>#Athletics</li>
-                  </ul>
-
-                </div>
-            </div>
-
-
-          </div>
+          <Topics></Topics>
 
           <div className='col-sm-8'>
               <div className='row'>
