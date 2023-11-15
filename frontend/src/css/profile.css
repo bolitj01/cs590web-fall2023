@@ -100,6 +100,7 @@
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    color: black;
 }
 .dropset li:hover{
     background-color: var(--grey--dark);
@@ -147,4 +148,11 @@
 }
 .dropIcon{
     margin-right:10px;
+}
+a{
+    text-decoration: none;
+}
+.postouterul{
+    margin: 0;
+    padding: 0;
 }

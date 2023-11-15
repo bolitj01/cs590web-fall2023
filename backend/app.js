@@ -8,6 +8,8 @@ const app = express()
 const userRoutes = require("./routes/userRoutes")
 
 
+const postRoutes = require("./routes/postRoutes")
+
 connectDB();
 
 app.use(express.json());
@@ -15,6 +17,7 @@ app.use(cors())
 
 
 app.use('/users', userRoutes);
+app.use('/post', postRoutes);
 
 
 const port = process.env.PORT || 3000;
